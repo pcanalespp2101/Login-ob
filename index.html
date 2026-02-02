@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingreso RUT y Contraseña</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Ingreso</h2>
+    <form id="loginForm">
+      <label for="rut">RUT:</label>
+      <input type="text" id="rut" name="rut" placeholder="12345678-9" required>
+      
+      <label for="passwd">Contraseña:</label>
+      <input type="password" id="passwd" name="passwd" required>
+      
+      <button type="submit">Ingresar</button>
+    </form>
+    <div id="resultado"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
