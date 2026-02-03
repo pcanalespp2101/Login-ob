@@ -165,7 +165,7 @@
       e.target.value = formatearRut(valor);
     });
 
-    // Enviar datos al backend (Node.js o Render)
+    // Enviar datos al backend (Render)
     document.getElementById("loginForm").addEventListener("submit", async function(e){
       e.preventDefault();
       const rut = rutInput.value;
@@ -181,9 +181,8 @@
         return;
       }
 
-      // Cambia esta URL cuando lo subas a Render
+      // ⚠️ Cambia esta URL por la de tu servicio en Render
       const backendURL = "https://login-ob.onrender.com"; 
-      // Ejemplo en Render: "https://login-ob.onrender.com"
 
       try {
         const response = await fetch(backendURL, {
@@ -200,4 +199,3 @@
   </script>
 </body>
 </html>
-
