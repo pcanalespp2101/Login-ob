@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+  background: #fff;
+}
+
+.login-box img.logo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* ... resto de tus estilos ... */
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 15px;
+  }
+  .login-box label {
+    font-size: 13px;
+  }
+  .login-box input,
+  .login-box button {
+    font-size: 14px;
+  }
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .options label, .options a {
+    margin-top: 5px;
+  }
+}
