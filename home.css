@@ -5,26 +5,20 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-.hero {
-  background: url('fondo-pc.jpg') no-repeat top center;
-  background-size: cover;   /* llena la pantalla en PC */
-  height: 100vh;
-  position: relative;
+/* Barra superior con logo y botón */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white; /* fondo sólido para destacar logo y botón */
 }
 
-/* Logo arriba izquierda */
 .logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 120px; /* ajusta tamaño del logo */
+  height: 40px; /* mismo tamaño visual que el botón */
 }
 
-/* Botón ingresar arriba derecha */
 .btn-ingresar {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   padding: 10px 25px;
   background-color: red;
   color: white;
@@ -40,16 +34,24 @@ body, html {
   background-color: darkred;
 }
 
+/* Foto de fondo */
+.hero {
+  background: url('fondo-pc.jpg') no-repeat top center;
+  background-size: cover;
+  height: calc(100vh - 70px); /* ocupa el resto de la pantalla debajo del header */
+}
+
 /* --- Adaptación a tablets --- */
 @media (max-width: 1024px) {
   .hero {
     background: url('fondo-tablet.jpg') no-repeat center top;
-    background-size: contain; /* muestra la imagen completa */
+    background-size: contain;
     background-repeat: no-repeat;
+    height: calc(100vh - 70px);
   }
 
   .logo {
-    width: 90px;
+    height: 30px;
   }
 
   .btn-ingresar {
@@ -62,19 +64,16 @@ body, html {
 @media (max-width: 480px) {
   .hero {
     background: url('fondo-movil.jpg') no-repeat center top;
-    background-size: contain; /* evita que se corte */
+    background-size: contain;
     background-repeat: no-repeat;
+    height: calc(100vh - 60px);
   }
 
   .logo {
-    top: 10px;
-    left: 10px;
-    width: 70px;
+    height: 25px;
   }
 
   .btn-ingresar {
-    top: 10px;
-    right: 10px;
     padding: 6px 15px;
     font-size: 12px;
   }
