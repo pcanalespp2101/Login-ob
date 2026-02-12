@@ -6,7 +6,7 @@ body, html {
 }
 
 .hero {
-  background: url('fondo.jpg') no-repeat top center;
+  background: url('fondo-pc.jpg') no-repeat top center;
   background-size: cover;   /* llena la pantalla en PC */
   height: 100vh;
   position: relative;
@@ -42,8 +42,8 @@ body, html {
 /* --- Adaptación a tablets --- */
 @media (max-width: 1024px) {
   .hero {
+    background: url('fondo-tablet.jpg') no-repeat center top;
     background-size: contain; /* muestra la imagen completa */
-    background-position: center top;
     background-repeat: no-repeat;
   }
 
@@ -61,8 +61,9 @@ body, html {
 /* --- Adaptación a móviles pequeños --- */
 @media (max-width: 480px) {
   .hero {
+    background: url('fondo-movil.jpg') no-repeat center top;
     background-size: contain; /* evita que se corte */
-    background-position: center top;
+    background-repeat: no-repeat;
   }
 
   .logo {
