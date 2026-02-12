@@ -17,6 +17,7 @@ body, html {
   position: absolute;
   top: 20px;
   left: 20px;
+  width: 120px; /* ajusta tamaño del logo */
 }
 
 /* Botón ingresar arriba derecha */
@@ -47,9 +48,8 @@ body, html {
     background-repeat: no-repeat;
   }
 
-  .logo svg {
+  .logo {
     width: 90px;
-    height: auto;
   }
 
   .btn-ingresar {
@@ -69,11 +69,7 @@ body, html {
   .logo {
     top: 10px;
     left: 10px;
-  }
-
-  .logo svg {
     width: 70px;
-    height: auto;
   }
 
   .btn-ingresar {
