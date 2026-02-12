@@ -11,11 +11,13 @@ body, html {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: white; /* fondo sólido para destacar logo y botón */
+  background-color: white; /* fondo sólido para que logo y botón no se mezclen con la foto */
+  position: relative;
+  z-index: 10; /* asegura que quede por encima de la imagen */
 }
 
 .logo {
-  height: 40px; /* mismo tamaño visual que el botón */
+  height: 40px; /* tamaño ajustado */
 }
 
 .btn-ingresar {
@@ -23,7 +25,7 @@ body, html {
   background-color: red;
   color: white;
   border: none;
-  border-radius: 50px; /* estilo píldora */
+  border-radius: 50px;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
@@ -34,10 +36,11 @@ body, html {
   background-color: darkred;
 }
 
-/* Foto de fondo */
+/* Foto de fondo debajo del header */
 .hero {
-  background: url('fondo-pc.jpg') no-repeat top center;
-  background-size: cover;
+  background: url('fondo-pc.jpg') no-repeat center top;
+  background-size: contain; /* mantiene proporciones sin estirar */
+  background-color: #000;   /* color de relleno si sobran espacios */
   height: calc(100vh - 70px); /* ocupa el resto de la pantalla debajo del header */
 }
 
@@ -47,6 +50,7 @@ body, html {
     background: url('fondo-tablet.jpg') no-repeat center top;
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: #000;
     height: calc(100vh - 70px);
   }
 
@@ -66,6 +70,7 @@ body, html {
     background: url('fondo-movil.jpg') no-repeat center top;
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: #000;
     height: calc(100vh - 60px);
   }
 
