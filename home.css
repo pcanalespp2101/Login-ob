@@ -1,0 +1,67 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  background: url('fondo.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+/* Logo arriba izquierda */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Botón ingresar arriba derecha */
+.btn-ingresar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 25px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50px; /* estilo píldora */
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-ingresar:hover {
+  background-color: darkred;
+}
+
+/* --- Adaptación a móviles --- */
+@media (max-width: 768px) {
+  .logo svg {
+    width: 90px;
+    height: auto;
+  }
+
+  .btn-ingresar {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    top: 10px;
+    left: 10px;
+  }
+
+  .btn-ingresar {
+    top: 10px;
+    right: 10px;
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+}
