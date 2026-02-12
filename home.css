@@ -7,7 +7,7 @@ body, html {
 
 .hero {
   background: url('fondo.jpg') no-repeat center center;
-  background-size: cover;
+  background-size: cover;   /* en pantallas grandes llena toda la vista */
   height: 100vh;
   position: relative;
 }
@@ -39,8 +39,14 @@ body, html {
   background-color: darkred;
 }
 
-/* --- Adaptación a móviles --- */
-@media (max-width: 768px) {
+/* --- Adaptación a tablets --- */
+@media (max-width: 1024px) {
+  .hero {
+    background-size: contain; /* muestra la imagen completa */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .logo svg {
     width: 90px;
     height: auto;
@@ -52,10 +58,21 @@ body, html {
   }
 }
 
+/* --- Adaptación a móviles pequeños --- */
 @media (max-width: 480px) {
+  .hero {
+    background-size: contain; /* evita que se corte */
+    background-position: center top;
+  }
+
   .logo {
     top: 10px;
     left: 10px;
+  }
+
+  .logo svg {
+    width: 70px;
+    height: auto;
   }
 
   .btn-ingresar {
