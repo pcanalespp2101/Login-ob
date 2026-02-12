@@ -6,8 +6,8 @@ body, html {
 }
 
 .hero {
-  background: url('fondo.jpg') no-repeat center center;
-  background-size: cover;   /* en pantallas grandes llena toda la vista */
+  background: url('fondo.jpg') no-repeat top center;
+  background-size: cover;   /* llena la pantalla en PC */
   height: 100vh;
   position: relative;
 }
@@ -43,7 +43,7 @@ body, html {
 @media (max-width: 1024px) {
   .hero {
     background-size: contain; /* muestra la imagen completa */
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
   }
 
