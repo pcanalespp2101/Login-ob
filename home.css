@@ -38,9 +38,8 @@ body, html {
 
 /* Foto de fondo debajo del header */
 .hero {
-  background: url('fondo-pc.jpg') no-repeat center top;
-  background-size: contain; /* mantiene proporciones sin estirar */
-  background-color: #000;   /* color de relleno si sobran espacios */
+  background: url('fondo-pc.jpg') no-repeat top center;
+  background-size: cover;   /* llena la pantalla */
   height: calc(100vh - 70px); /* ocupa el resto de la pantalla debajo del header */
 }
 
@@ -48,7 +47,7 @@ body, html {
 @media (max-width: 1024px) {
   .hero {
     background: url('fondo-tablet.jpg') no-repeat center top;
-    background-size: contain;
+    background-size: contain; /* muestra la imagen completa sin deformar */
     background-repeat: no-repeat;
     background-color: #000;
     height: calc(100vh - 70px);
