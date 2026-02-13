@@ -3,6 +3,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
+  background-color: #fff; /* fondo blanco por defecto */
 }
 
 /* Barra superior con logo y botón */
@@ -40,47 +41,30 @@ body, html {
 .hero {
   background: url('fondo-pc.jpg') no-repeat center center;
   background-size: contain;   /* mantiene proporciones sin deformar */
-  background-color: #000;     /* rellena con negro el espacio sobrante */
+  background-color: #fff;     /* fondo blanco debajo de la imagen */
   width: 100%;
   height: calc(100vh - 70px); /* ocupa todo el espacio debajo de la barra superior */
-  aspect-ratio: 1 / 1;        /* fuerza cuadrado */
-  margin: 0 auto;
+  position: relative;
+}
+
+/* Línea gris tenue degradada en la división */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* grosor de la línea */
+  background: linear-gradient(to bottom, rgba(150,150,150,0.3), rgba(255,255,255,0));
 }
 
 /* --- Adaptación a tablets --- */
 @media (max-width: 1024px) {
   .hero {
     background: url('fondo-tablet.jpg') no-repeat center top;
-    background-size: contain; /* muestra la imagen completa sin deformar */
+    background-size: contain;
     background-repeat: no-repeat;
-    background-color: #000;
-    height: calc(100vh - 70px);
-  }
-
-  .logo {
-    height: 30px;
-  }
-
-  .btn-ingresar {
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-}
-
-/* --- Adaptación a móviles pequeños --- */
-@media (max-width: 480px) {
-  .hero {
-    background: url('fondo-movil.jpg: 1 / 1;        /* fuerza cuadrado */
-  margin: 0 auto;
-}
-
-/* --- Adaptación a tablets --- */
-@media (max-width: 1024px) {
-  .hero {
-    background: url('fondo-tablet.jpg') no-repeat center top;
-    background-size: contain; /* muestra la imagen completa sin deformar */
-    background-repeat: no-repeat;
-    background-color: #000;
+    background-color: #fff;
     height: calc(100vh - 70px);
   }
 
@@ -100,14 +84,7 @@ body, html {
     background: url('fondo-movil.jpg') no-repeat center top;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: #000;
-    height: calc(100vh - 60px);
-  }
-
-  .logo') no-repeat center top;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #000;
+    background-color: #fff;
     height: calc(100vh - 60px);
   }
 
