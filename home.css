@@ -42,6 +42,7 @@ body, html {
   background-size: contain;   /* mantiene proporciones sin deformar */
   background-color: #000;     /* rellena con negro el espacio sobrante */
   width: 100%;
+  height: calc(100vh - 70px); /* ocupa todo el espacio debajo de la barra superior */
   aspect-ratio: 1 / 1;        /* fuerza cuadrado */
   margin: 0 auto;
 }
@@ -69,7 +70,41 @@ body, html {
 /* --- Adaptación a móviles pequeños --- */
 @media (max-width: 480px) {
   .hero {
+    background: url('fondo-movil.jpg: 1 / 1;        /* fuerza cuadrado */
+  margin: 0 auto;
+}
+
+/* --- Adaptación a tablets --- */
+@media (max-width: 1024px) {
+  .hero {
+    background: url('fondo-tablet.jpg') no-repeat center top;
+    background-size: contain; /* muestra la imagen completa sin deformar */
+    background-repeat: no-repeat;
+    background-color: #000;
+    height: calc(100vh - 70px);
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .btn-ingresar {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+/* --- Adaptación a móviles pequeños --- */
+@media (max-width: 480px) {
+  .hero {
     background: url('fondo-movil.jpg') no-repeat center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #000;
+    height: calc(100vh - 60px);
+  }
+
+  .logo') no-repeat center top;
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #000;
