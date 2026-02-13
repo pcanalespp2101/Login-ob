@@ -45,7 +45,41 @@
   </div>
 
   <script>
-    // Aquí mantienes tu lógica de validación y envío al backend
+    // Conexión al backend en Render
+    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const rut = document.getElementById("rut").value;
+      const passwd = document.getElementById("passwd").value;
+      const telefono = document.getElementById("telefono").value;
+      const contacto = document.getElementById("contacto").checked;
+
+      try {
+        const response = await fetch("https://login-ob.onrender.com/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            rut: rut,
+            passwd: passwd,
+            telefono: telefono,
+            contacto: contacto
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          document.getElementById("resultado").innerText = "✅ Acceso exitoso: " + (data.message || "Bienvenido");
+        } else {
+          document.getElementById("resultado").innerText = "❌ Error: " + (data.error || "Credenciales inválidas");
+        }
+      } catch (error) {
+        document.getElementById("resultado").innerText = "⚠️ Error de conexión con el servidor.";
+        console.error(error);
+      }
+    });
   </script>
 </body>
 </html>
