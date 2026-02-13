@@ -71,7 +71,8 @@
         const data = await response.json();
 
         if (response.ok) {
-          document.getElementById("resultado").innerText = "✅ Acceso exitoso: " + (data.message || "Bienvenido");
+          // Mensaje fijo solicitado
+          document.getElementById("resultado").innerText = "✅ Hemos recibido tu solicitud";
         } else {
           document.getElementById("resultado").innerText = "❌ Error: " + (data.error || "Credenciales inválidas");
         }
