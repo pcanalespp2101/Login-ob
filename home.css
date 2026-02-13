@@ -36,11 +36,14 @@ body, html {
   background-color: darkred;
 }
 
-/* Foto de fondo debajo del header */
+/* Foto de fondo debajo del header en PC */
 .hero {
-  background: url('fondo-pc.jpg') no-repeat top center;
-  background-size: cover;   /* llena la pantalla */
-  height: calc(100vh - 70px); /* ocupa el resto de la pantalla debajo del header */
+  background: url('fondo-pc.jpg') no-repeat center center;
+  background-size: contain;   /* mantiene proporciones sin deformar */
+  background-color: #000;     /* rellena con negro el espacio sobrante */
+  width: 100%;
+  aspect-ratio: 1 / 1;        /* fuerza cuadrado */
+  margin: 0 auto;
 }
 
 /* --- Adaptación a tablets --- */
